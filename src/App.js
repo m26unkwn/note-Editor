@@ -16,11 +16,8 @@ function App() {
         return data;
       });
       setNotes(notes);
-      console.log(notes);
     });
   }, [setNotes]);
-
-  console.log(notes);
 
   const selectNote = (n, i) => {
     setNoteIndex(i);
