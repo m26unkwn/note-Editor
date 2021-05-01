@@ -48,9 +48,11 @@ const Sidebar = (props) => {
             placeholder='enter note Title'
             onKeyUp={updateTitle}
           />
-          <Button className={classes.newNoteSubmitBtn} onClick={newNote}>
-            SUBMIT NOTE
-          </Button>
+          {title && (
+            <Button className={classes.newNoteSubmitBtn} onClick={newNote}>
+              SUBMIT NOTE
+            </Button>
+          )}
         </div>
       ) : null}
       <List>
