@@ -15,18 +15,18 @@ const Editor = (props) => {
   const [title, setTitle] = useState(" ");
   const [id, setId] = useState(" ");
 
-  const updateBody = (value) => {
+  const updateBody = debounce((value) => {
     setText(value);
 
     update();
-  };
+  }, 5000);
 
-  const update = debounce(() => {
+  const update = () => {
     props.noteUpdate(id, {
       title: title,
       body: text,
     });
-  }, 1500);
+  };
 
   useEffect(() => {
     setText(props.selectedNote.body);

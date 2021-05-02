@@ -7,7 +7,7 @@ import SidebarItem from "./SidebarItem";
 
 const Sidebar = (props) => {
   const [addingNote, setAddingNote] = useState(false);
-  const [title, setTitle] = useState(null);
+  const [title, setTitle] = useState("");
 
   const { classes } = props;
 
@@ -18,7 +18,7 @@ const Sidebar = (props) => {
 
   const updateTitle = (e) => {
     const title = e.target.value;
-    setTitle(title);
+    setTitle(title.trim());
   };
 
   const newNote = () => {
@@ -48,11 +48,12 @@ const Sidebar = (props) => {
             placeholder='enter note Title'
             onKeyUp={updateTitle}
           />
-          {title && (
-            <Button className={classes.newNoteSubmitBtn} onClick={newNote}>
-              SUBMIT NOTE
-            </Button>
-          )}
+          <Button
+            disabled={title ? false : true}
+            className={classes.newNoteSubmitBtn}
+            onClick={newNote}>
+            SUBMIT NOTE
+          </Button>
         </div>
       ) : null}
       <List>
