@@ -1,6 +1,7 @@
 # Note-Editor
 
-This Project is a simple note editor which is similar to evernote.
+This Project is a simple note editor which is similar to evernote. 
+Link https://notes-editor.netlify.app/
 
 ## Tech Stack
 
